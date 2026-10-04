@@ -22,8 +22,8 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--text);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
   line-height: 1.6;
 }
 
@@ -36,8 +36,6 @@ a {
   width: min(100% - 2rem, var(--max-width));
   margin-inline: auto;
 }
-
-/* Navigation */
 
 .site-header {
   position: sticky;
@@ -99,7 +97,14 @@ a {
   cursor: pointer;
 }
 
-/* General typography */
+.hero {
+  min-height: 34rem;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 4rem;
+  padding-block: 5rem;
+}
 
 .eyebrow {
   margin: 0 0 0.8rem;
@@ -140,17 +145,6 @@ h2 {
 h3 {
   color: white;
   font-size: 1.15rem;
-}
-
-/* Homepage hero */
-
-.hero {
-  min-height: 34rem;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
-  gap: 4rem;
-  padding-block: 5rem;
 }
 
 .hero-description,
@@ -194,8 +188,6 @@ h3 {
   background: var(--surface);
 }
 
-/* Pipeline visual */
-
 .hero-visual {
   display: flex;
   flex-direction: column;
@@ -203,11 +195,7 @@ h3 {
   padding: 2rem;
   border: 1px solid var(--border);
   border-radius: 1.2rem;
-  background: linear-gradient(
-    145deg,
-    var(--surface),
-    rgba(33, 48, 77, 0.35)
-  );
+  background: linear-gradient(145deg, var(--surface), rgba(33, 48, 77, 0.35));
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
 }
 
@@ -240,10 +228,153 @@ h3 {
   opacity: 0.65;
 }
 
-/* Sections and cards */
-
 .section {
   padding-block: 5rem;
+}
+
+.page-container {
+  width: min(100% - 2rem, 900px);
+  margin-inline: auto;
+  padding-block: 4rem 5rem;
+}
+
+.page-intro {
+  max-width: 48rem;
+  margin-bottom: 3rem;
+}
+
+.page-intro h1 {
+  max-width: 16ch;
+}
+
+.page-intro audio {
+  margin-top: 1rem;
+}
+
+.content-section {
+  margin-block: 3rem;
+}
+
+.content-section h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.content-section p,
+.reference li {
+  color: var(--muted);
+}
+
+.content-image {
+  display: block;
+  width: 100%;
+  max-height: 28rem;
+  object-fit: contain;
+  margin: 2rem 0 0.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: var(--surface);
+}
+
+.caption {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.citation {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  background: #080f1f;
+  color: #b6f3ff;
+}
+
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.comparison-table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+}
+
+th,
+td {
+  padding: 0.9rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: white;
+  background: var(--surface-light);
+}
+
+td {
+  color: var(--muted);
+}
+
+.activity-card {
+  padding: 2rem;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 1rem;
+  background: var(--surface);
+}
+
+.quiz-options {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.quiz-options button {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  color: var(--text);
+  background: var(--surface-light);
+  cursor: pointer;
+  text-align: left;
+}
+
+.quiz-options button:hover {
+  border-color: var(--cyan);
+}
+
+.quiz-feedback {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.quiz-feedback.correct {
+  color: #86efac;
+}
+
+.quiz-feedback.wrong {
+  color: #fca5a5;
+}
+
+.reference {
+  padding: 1.5rem;
+  border-left: 3px solid var(--cyan);
+  background: var(--surface);
 }
 
 .section-heading {
@@ -288,8 +419,6 @@ h3 {
   font-size: 0.9rem;
 }
 
-/* Audio section */
-
 .audio-section {
   display: flex;
   align-items: center;
@@ -315,8 +444,6 @@ audio {
   width: min(100%, 22rem);
 }
 
-/* Footer */
-
 .site-footer {
   border-top: 1px solid var(--border);
   color: var(--muted);
@@ -338,8 +465,6 @@ audio {
 .footer-content a {
   color: var(--cyan);
 }
-
-/* Tablet and mobile layout */
 
 @media (max-width: 850px) {
   .menu-toggle {
@@ -385,7 +510,8 @@ audio {
   }
 
   .audio-section,
-  .footer-content {
+  .footer-content,
+  .page-navigation {
     align-items: flex-start;
     flex-direction: column;
   }
