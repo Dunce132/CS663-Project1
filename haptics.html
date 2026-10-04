@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How haptic feedback and embedded systems communicate visual information.">
+  <title>Haptic Feedback and Embedded Systems | Vision2Haptics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header"><nav class="navbar container" aria-label="Main navigation">
+    <a class="logo" href="index.html">Vision<span>2</span>Haptics</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+    <div class="nav-links" id="main-menu">
+      <a href="index.html">Home</a><a href="vision.html">Computer Vision</a><a class="active" href="haptics.html">Haptics</a><a href="existing-systems.html">Existing Systems</a><a href="challenges.html">Challenges</a><a href="conclusion.html">Conclusion</a><a href="bibliography.html">Sources</a>
+    </div>
+  </nav></header>
+
+  <main class="page-container">
+    <section class="page-intro">
+      <p class="eyebrow">Haptic feedback and embedded systems</p>
+      <h1>Turning Visual Information into Touch</h1>
+      <p>Explain how direction, distance, motion, and urgency are represented through vibration patterns and how an embedded system produces those signals.</p>
+      <audio controls preload="metadata"><source src="audio/haptics.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio>
+    </section>
+
+    <section class="content-section">
+      <h2>Embedded-system architecture</h2>
+      <p>Describe the flow from the camera and sensors to the processor, motor driver, and vibration actuators.</p>
+      <img class="content-image" src="images/hardware-architecture.svg" alt="Diagram of an embedded vision-to-haptic system">
+      <p class="caption">Figure 1. Replace this caption with the source or state that the diagram was created by the author.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>How should information be encoded?</h2>
+      <p>Explain how motor location can communicate direction, intensity can communicate distance, and pulse rate can communicate urgency.</p>
+      <div class="demo-card">
+        <h3>Interactive haptic demonstration</h3>
+        <p>Move the sliders to see how the proposed encoding changes.</p>
+        <div class="demo-controls">
+          <label>Obstacle distance: <output id="distance-value">50% away</output><input id="distance-slider" type="range" min="10" max="90" value="50"></label>
+          <label>Horizontal position: <output id="direction-value">Center</output><input id="direction-slider" type="range" min="0" max="100" value="50"></label>
+        </div>
+        <div class="demo-output">
+          <div class="motor-display" id="active-motor">Center motor active</div>
+          <div class="motor-display">Intensity: <strong id="intensity-value">50%</strong></div>
+          <div class="motor-display">Pulse rate: <strong id="pulse-value">4 pulses/sec</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Example algorithm</h2>
+      <p>Include and explain an algorithm that maps distance and position to actuator behavior.</p>
+      <pre><code>if distance &lt; safe_distance:
+    increase_vibration_intensity()
+    increase_pulse_rate()
+
+if object_is_left:
+    activate_left_motor()</code></pre>
+    </section>
+
+    <section class="content-section"><h2>Design alternatives</h2><p>Compare rule-based encoding, fuzzy logic, sensor fusion, and learned haptic policies. Explain when each approach is appropriate.</p></section>
+
+    <div class="page-navigation"><a class="button secondary-button" href="vision.html">← Computer Vision</a><a class="button primary-button" href="existing-systems.html">Existing Systems →</a></div>
+  </main>
+  <footer class="site-footer"><div class="container footer-content"><p>Combining Vision and Haptic Feedback · Duncan Liu</p><a href="bibliography.html">View annotated bibliography</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
