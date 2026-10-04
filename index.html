@@ -3,33 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="An online tutorial about translating computer vision into haptic feedback."
-  >
-
+  <meta name="description" content="An interactive tutorial about translating computer vision into haptic feedback.">
   <title>From Vision to Vibration</title>
-
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-  <!-- Navigation -->
   <header class="site-header">
     <nav class="navbar container" aria-label="Main navigation">
+      <a class="logo" href="index.html">Vision<span>2</span>Haptics</a>
 
-      <a class="logo" href="index.html">
-        Vision<span>2</span>Haptics
-      </a>
-
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="main-menu"
-      >
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
         Menu
       </button>
 
@@ -38,195 +21,101 @@
         <a href="vision.html">Vision</a>
         <a href="translation.html">Vision-to-Haptics</a>
         <a href="hardware.html">Hardware</a>
-        <a href="existing-systems.html">Existing Systems</a>
         <a href="challenges.html">Challenges</a>
         <a href="activity.html">Activity</a>
         <a href="bibliography.html">Sources</a>
       </div>
-
     </nav>
   </header>
 
   <main>
-
-    <!-- Introduction -->
     <section class="hero container">
       <div class="hero-text">
-
-        <p class="eyebrow">Assistive Technology Tutorial</p>
-
-        <h1>
-          From vision to <span>vibration.</span>
-        </h1>
-
+        <p class="eyebrow">Assistive technology tutorial</p>
+        <h1>From vision to <span>vibration.</span></h1>
         <p class="hero-description">
-          This tutorial explores how computer vision can be combined with
-          haptic feedback and embedded systems to help visually impaired users
-          gain spatial awareness.
+          Discover how computer vision can be translated into meaningful haptic
+          feedback for spatial awareness and navigation.
         </p>
-
-        <p class="hero-description">
-          The tutorial focuses on how information about direction, distance,
-          motion, and obstacles can be translated into meaningful vibration
-          patterns.
-        </p>
-
         <div class="button-row">
-          <a class="button primary-button" href="vision.html">
-            Begin the tutorial
-          </a>
-
-          <a class="button secondary-button" href="#overview">
-            Explore the topic
-          </a>
+          <a class="button primary-button" href="vision.html">Begin the tutorial</a>
+          <a class="button secondary-button" href="#overview">Explore the topic</a>
         </div>
-
       </div>
 
-      <!-- Introductory system diagram -->
-      <div class="hero-visual" aria-label="Vision-to-haptic system pipeline">
-
-        <div class="pipeline-node">
-          <span>01</span>
-          Camera input
-        </div>
-
+      <div class="hero-visual" aria-label="System pipeline illustration">
+        <div class="pipeline-node"><span>01</span>Camera</div>
         <div class="pipeline-line"></div>
-
-        <div class="pipeline-node">
-          <span>02</span>
-          Scene interpretation
-        </div>
-
+        <div class="pipeline-node"><span>02</span>Interpretation</div>
         <div class="pipeline-line"></div>
-
-        <div class="pipeline-node highlight">
-          <span>03</span>
-          Haptic output
-        </div>
-
+        <div class="pipeline-node highlight"><span>03</span>Haptic output</div>
       </div>
     </section>
 
-    <!-- Tutorial overview -->
     <section class="section container" id="overview">
-
       <div class="section-heading">
-        <p class="eyebrow">Tutorial Overview</p>
-
-        <h2>
-          How does a visual scene become a vibration?
-        </h2>
-
+        <p class="eyebrow">Tutorial overview</p>
+        <h2>How does a visual scene become a vibration?</h2>
         <p>
-          A camera provides visual information about the surrounding
-          environment. An embedded system interprets that information,
-          estimates spatial relationships, and selects a haptic signal that
-          communicates direction, distance, or urgency.
+          A camera provides raw visual information. An embedded system interprets
+          that information, estimates spatial relationships, and selects a haptic
+          signal that communicates direction, distance, or urgency.
         </p>
       </div>
 
       <div class="card-grid three-columns">
-
         <article class="info-card">
           <div class="card-number">01</div>
-
           <h3>Understand the scene</h3>
-
-          <p>
-            Learn how computer vision can identify objects, positions,
-            distance, motion, and potential collision risks.
-          </p>
-
-          <a href="vision.html">
-            Learn about computer vision →
-          </a>
+          <p>Identify objects, positions, distance, motion, and collision risk.</p>
+          <a href="vision.html">Learn about vision →</a>
         </article>
 
         <article class="info-card featured-card">
           <div class="card-number">02</div>
-
           <h3>Translate the information</h3>
-
-          <p>
-            Explore how visual properties can control motor location,
-            vibration intensity, pulse frequency, and feedback patterns.
-          </p>
-
-          <a href="translation.html">
-            Explore vision-to-haptics →
-          </a>
+          <p>Map visual properties to motor location, intensity, and pulse rate.</p>
+          <a href="translation.html">Explore the mapping →</a>
         </article>
 
         <article class="info-card">
           <div class="card-number">03</div>
-
           <h3>Evaluate the system</h3>
-
-          <p>
-            Consider hardware choices, latency, battery life, environmental
-            conditions, usability, and safety limitations.
-          </p>
-
-          <a href="challenges.html">
-            Review the challenges →
-          </a>
+          <p>Consider hardware, usability, latency, safety, and environmental limits.</p>
+          <a href="challenges.html">Review the challenges →</a>
         </article>
-
       </div>
     </section>
 
-    <!-- Voice requirement -->
     <section class="audio-section container">
-
       <div>
-        <p class="eyebrow">Voice narration</p>
-
-        <h2>Listen to the introduction</h2>
-
-        <p>
-          Use the audio narration to follow along with this page.
-        </p>
+        <p class="eyebrow">Listen to the introduction</p>
+        <h2>Prefer audio?</h2>
+        <p>Use the narration to follow along with this page.</p>
       </div>
-
       <audio controls preload="metadata">
         <source src="audio/introduction.mp3" type="audio/mpeg">
-
         Your browser does not support audio playback.
       </audio>
-
     </section>
-
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-content">
-
-      <p>
-        From Vision to Vibration · Duncan Liu
-      </p>
-
-      <a href="bibliography.html">
-        View annotated bibliography
-      </a>
-
+      <p>From Vision to Vibration · Duncan Liu</p>
+      <a href="bibliography.html">View annotated bibliography</a>
     </div>
   </footer>
 
-  <!-- Mobile navigation functionality -->
   <script>
-    const menuButton = document.querySelector(".menu-toggle");
-    const menu = document.querySelector("#main-menu");
+    const menuButton = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('#main-menu');
 
-    menuButton.addEventListener("click", () => {
-      const isOpen =
-        menuButton.getAttribute("aria-expanded") === "true";
-
-      menuButton.setAttribute("aria-expanded", String(!isOpen));
-      menu.classList.toggle("open");
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menu.classList.toggle('open');
     });
   </script>
-
 </body>
 </html>
