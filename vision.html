@@ -44,11 +44,15 @@
       approaching the wearer's path. Thus, the system combines object position, depth, estimated direction of motion, and the model's confidence value to estimate the risk of 
       collision. Differing levels of risk will help the haptic feedback device give more precise feedback beyond indicating an object exists in which direction.</p>
 
-      <p> The visual output can be represented as structured data rather than as a complete image. For example, one detected object might be represented as
-      <code>{label: "person", x: 0.25, depth: 1.8, velocity: 0.4, confidence: 0.91}</code>. The embedded system can then prioritize this information and determine 
-      what should be communicated through vibration. Kleinberg et al. demonstrate a related approach by combining camera-based vision with ultrasonic sensing and 
-      machine-learning methods for spatial orientation
-      <a class="citation" href="bibliography.html#reference-1">[1]</a>.</p>
+      <p>The visual output can be represented as structured data rather than as a complete image. For example, one detected object might be represented as
+      <code>{label: "person", x: 0.25, depth: 1.8, velocity: 0.4, confidence: 0.91}</code>. This example is an abstraction created for this tutorial. The 
+      embedded system can then prioritize the information and determine what should be communicated through vibration </p>
+
+      <p>
+      A related architecture is described by Kleinberg et al., who combine camera-based vision with ultrasonic sensing and machine-learning methods to
+      support spatial orientation
+      <a class="citation" href="bibliography.html#reference-1">[1]</a>.
+      </p>
       <img class="content-image" src="images/vision-example.svg" alt="Replace with a description of your computer-vision diagram">
       <p class="caption">
         Figure 1. Example of the visual information passed from a camera-based
