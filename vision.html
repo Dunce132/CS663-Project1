@@ -62,8 +62,46 @@
 
     <section class="content-section">
       <h2>Technical method</h2>
-      <p>Explain the algorithm, model, or calculation used in this section.</p>
-      <pre><code>// Replace this with a relevant code example or pseudocode.</code></pre>
+      <p>
+  A simplified vision-to-spatial-information pipeline can be expressed as a
+  sequence of operations. First, the camera captures an image frame. Next, a
+  perception model detects objects and estimates their locations. A depth
+  estimate is obtained from stereo vision, a depth camera, ultrasonic sensing,
+  or an approximation based on object size. The system then compares the
+  current frame with previous frames to determine whether an object is moving.
+  Finally, the system calculates a priority value for each object.
+</p>
+
+<pre><code>for each camera_frame:
+    detections = detect_objects(camera_frame)
+
+    for object in detections:
+        direction = estimate_horizontal_position(object)
+        distance = estimate_depth(object)
+        motion = compare_with_previous_frames(object)
+        risk = calculate_collision_risk(
+            direction,
+            distance,
+            motion,
+            object.confidence
+        )
+
+        if risk &gt; risk_threshold:
+            send_to_haptic_encoder(
+                direction,
+                distance,
+                motion,
+                risk
+            )</code></pre>
+
+<p>
+  This algorithm separates perception from feedback. The vision stage produces
+  estimates, while the haptic stage decides how those estimates should be
+  encoded. This separation is important because the same visual information
+  could be communicated differently depending on the application. A navigation
+  device may prioritize collision risk, while a teleoperation system may
+  prioritize surface texture or contact information.
+</p>
     </section>
 
     <section class="content-section">
