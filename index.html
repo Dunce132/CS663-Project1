@@ -105,15 +105,6 @@
     </div>
   </footer>
 
-  <script>
-    const menuButton = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('#main-menu');
-
-    menuButton.addEventListener('click', () => {
-      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-      menuButton.setAttribute('aria-expanded', String(!isOpen));
-      menu.classList.toggle('open');
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
