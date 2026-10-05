@@ -1,12 +1,229 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Technical and human limitations of vision-guided haptic systems."><title>Challenges and Limitations | Vision2Haptics</title><link rel="stylesheet" href="styles.css"></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Challenges and limitations of vision-guided haptic feedback systems."
+  >
+
+  <title>Challenges and Limitations | Vision2Haptics</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
 <body>
-  <header class="site-header"><nav class="navbar container" aria-label="Main navigation"><a class="logo" href="index.html">Vision<span>2</span>Haptics</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button><div class="nav-links" id="main-menu"><a href="index.html">Home</a><a href="vision.html">Vision</a><a href="translation.html">Vision-to-Haptics</a><a href="hardware.html">Hardware</a><a href="existing-systems.html">Existing Systems</a><a class="active" href="challenges.html">Challenges</a><a href="activity.html">Activity</a><a href="bibliography.html">Sources</a></div></nav></header>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+
+      <a class="logo" href="index.html">
+        Vision<span>2</span>Haptics
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-menu"
+      >
+        Menu
+      </button>
+
+      <div class="nav-links" id="main-menu">
+        <a href="index.html">Home</a>
+        <a href="vision.html">Computer Vision</a>
+        <a href="haptics.html">Haptics + Embedded Systems</a>
+        <a href="existing-systems.html">Existing Technology</a>
+        <a class="active" href="challenges.html">Challenges</a>
+        <a href="conclusion.html">Future + Conclusion</a>
+        <a href="bibliography.html">Annotated Bibliography</a>
+      </div>
+
+    </nav>
+  </header>
+
+
   <main class="page-container">
-    <section class="page-intro"><p class="eyebrow">Critical evaluation</p><h1>Challenges and Limitations</h1><p>Replace this paragraph with an explanation of why reliable vision-to-haptic feedback is difficult in real-world environments.</p><audio controls preload="metadata"><source src="audio/challenges.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio></section>
-    <section class="content-section"><h2>Technical challenges</h2><div class="card-grid three-columns"><article class="info-card"><h3>Accuracy</h3><p>Explain missed detections, false positives, and confidence.</p></article><article class="info-card"><h3>Latency</h3><p>Explain how processing delay affects user response time.</p></article><article class="info-card"><h3>Environment</h3><p>Explain the effects of lighting, clutter, rain, glare, or occlusion.</p></article></div></section>
-    <section class="content-section"><h2>Human and hardware limitations</h2><p>Discuss cognitive overload, training, actuator placement, battery life, comfort, and safety.</p><img class="content-image" src="images/limitations.svg" alt="Diagram showing limitations of a haptic assistive system"><p class="caption">Figure 1. Replace this caption and source information.</p></section>
-    <section class="content-section"><h2>Future directions</h2><p>Explain possible improvements, such as sensor fusion, adaptive feedback, better depth estimation, or personalized vibration patterns.</p></section>
-    <div class="page-navigation"><a class="button secondary-button" href="existing-systems.html">← Existing Systems</a><a class="button primary-button" href="activity.html">Try the Activity →</a></div>
-  </main><footer class="site-footer"><div class="container footer-content"><p>From Vision to Vibration · Duncan Liu</p><a href="bibliography.html">View annotated bibliography</a></div></footer><script src="script.js"></script>
-</body></html>
+
+    <section class="page-intro">
+      <p class="eyebrow">Critical evaluation</p>
+
+      <h1>Challenges and Limitations</h1>
+
+      <p>
+        Vision-guided haptic systems must interpret uncertain visual data and
+        convert it into feedback that users can understand quickly. Accuracy,
+        processing speed, environmental conditions, hardware constraints, and
+        human perception all affect the usefulness of the final system.
+      </p>
+
+      <audio controls preload="metadata">
+        <source src="audio/challenges.mp3" type="audio/mpeg">
+        Your browser does not support audio playback.
+      </audio>
+    </section>
+
+
+    <section class="content-section">
+      <h2>Computer-vision accuracy</h2>
+
+      <p>
+        Computer-vision models may miss objects, produce false detections, or
+        incorrectly estimate an object’s location. A system may recognize that
+        an object is a person but still fail to determine whether the person is
+        directly in the user’s path.
+      </p>
+
+      <p>
+        Depth is also difficult to estimate from a single camera. This is why
+        systems such as the one described by Kleinberg et al. combine cameras
+        with ultrasonic distance sensors
+        <a class="citation" href="bibliography.html#reference-1">[1]</a>.
+      </p>
+    </section>
+
+
+    <section class="content-section">
+      <h2>Latency and responsiveness</h2>
+
+      <p>
+        A vision-to-haptic system must process camera frames, run its visual
+        model, estimate spatial information, and activate a motor. If this
+        process takes too long, the vibration may describe where an obstacle was
+        rather than where it currently is.
+      </p>
+
+      <p>
+        Delay is especially important when objects or users are moving. A system
+        should therefore balance model complexity with the processing ability
+        and energy limits of the embedded hardware.
+      </p>
+    </section>
+
+
+    <section class="content-section">
+      <h2>Environmental conditions</h2>
+
+      <div class="card-grid three-columns">
+
+        <article class="info-card">
+          <h3>Lighting</h3>
+          <p>
+            Darkness, glare, shadows, and sudden changes in brightness can reduce
+            the reliability of camera-based detection.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Occlusion</h3>
+          <p>
+            Objects may be partially hidden by people, furniture, vehicles, or
+            other objects in a crowded scene.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Motion</h3>
+          <p>
+            Camera movement and moving obstacles make it more difficult to
+            maintain stable position and distance estimates.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+
+    <section class="content-section">
+      <h2>Hardware and wearability</h2>
+
+      <p>
+        Wearable systems must be small, comfortable, and energy efficient.
+        Cameras, processors, batteries, sensors, and actuators all increase the
+        size and weight of the device.
+      </p>
+
+      <p>
+        Motor placement also affects interpretation. A vibration on the left
+        side of a belt may be easy to understand, but several simultaneous
+        vibrations can become confusing. The system must limit the amount of
+        information delivered at one time.
+      </p>
+
+      <img
+        class="content-image"
+        src="images/limitations.svg"
+        alt="Diagram showing technical and human limitations of a haptic assistive system"
+      >
+
+      <p class="caption">
+        Figure 1. Technical and human limitations of vision-guided haptic
+        feedback. Replace this image with your final diagram and cite its source.
+      </p>
+    </section>
+
+
+    <section class="content-section">
+      <h2>Human factors and safety</h2>
+
+      <p>
+        Haptic signals are not automatically intuitive. Users may need to learn
+        the meaning of different motor locations, vibration intensities, and
+        pulse patterns. Too many simultaneous signals may cause cognitive
+        overload.
+      </p>
+
+      <p>
+        Virtual Whiskers demonstrates the importance of evaluating haptic
+        feedback with people who are blind or have low vision. Its study
+        examined whether different feedback modes could reduce hesitation and
+        cane contacts during navigation
+        <a class="citation" href="bibliography.html#reference-2">[2]</a>.
+      </p>
+
+      <p>
+        These systems should supplement established mobility tools rather than
+        create false confidence. A missed detection or incorrect vibration could
+        create a safety risk.
+      </p>
+    </section>
+
+
+    <section class="content-section">
+      <h2>Key takeaway</h2>
+
+      <p>
+        A successful system requires more than a high object-detection accuracy.
+        It must produce feedback that is timely, spatially meaningful,
+        comfortable, understandable, and reliable in changing environments.
+      </p>
+    </section>
+
+
+    <div class="page-navigation">
+      <a class="button secondary-button" href="existing-systems.html">
+        ← Existing Technology
+      </a>
+
+      <a class="button primary-button" href="conclusion.html">
+        Future + Conclusion →
+      </a>
+    </div>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>Combining Vision and Haptic Feedback · Duncan Liu</p>
+      <a href="bibliography.html">View annotated bibliography</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
