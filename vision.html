@@ -28,15 +28,32 @@
     <section class="page-intro">
       <p class="eyebrow">Computer vision</p>
       <h1>Understanding Visual Information</h1>
-      <p>Replace this paragraph with your introduction to the computer-vision concepts used by the assistive system.</p>
+      <p>Computer vision is the first step in a vision-to-haptic assistive system. A camera captures sequential images of the surrounding environment but, these images are not
+      useful to the wearer until they are converted into spatial descriptions. The system makes estimates where objects are located relative to the user, whether they
+      are moving, and if they are a potential risk to the wearer. These estimates become the inputs of the haptic system.</p>
       <audio controls preload="metadata"><source src="audio/vision.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio>
     </section>
 
     <section class="content-section">
       <h2>What information does the camera provide?</h2>
-      <p>Write your explanation here. Discuss direction, distance, motion, object size, confidence, and collision risk.</p>
+      <p>As previously mentioned, the camera captures sequential two-dimensional image frames. Through these frames, a computer vision system can estimate properties relevant
+      to keeping its wearer safe. For an instance, an object-detection model can identify people, vehicles, furniture, walls, and other potential obstacles. The position and 
+      relative height of the object in the image can help estimate the horizontal direction and distance, respectively.</p>
+
+      <p>By using sequential frames, direction of motion can also be estimated. As an example as an object becomes larger and more centered, that can indicate an object is
+      approaching the wearer's path. Thus, the system combines object position, depth, estimated direction of motion, and the model's confidence value to estimate the risk of 
+      collision. Differing levels of risk will help the haptic feedback device give more precise feedback beyond indicating an object exists in which direction.</p>
+
+      <p> The visual output can be represented as structured data rather than as a complete image. For example, one detected object might be represented as
+      <code>{label: "person", x: 0.25, depth: 1.8, velocity: 0.4, confidence: 0.91}</code>. The embedded system can then prioritize this information and determine 
+      what should be communicated through vibration. Kleinberg et al. demonstrate a related approach by combining camera-based vision with ultrasonic sensing and 
+      machine-learning methods for spatial orientation
+      <a class="citation" href="bibliography.html#reference-1">[1]</a>.</p>
       <img class="content-image" src="images/vision-example.svg" alt="Replace with a description of your computer-vision diagram">
-      <p class="caption">Figure 1. Replace this caption and identify the source, or state that the diagram was created by the author.</p>
+      <p class="caption">
+        Figure 1. Example of the visual information passed from a camera-based
+        perception system to a haptic-encoding system. Diagram created by the author.
+      </p>
     </section>
 
     <section class="content-section">
