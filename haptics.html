@@ -100,6 +100,84 @@
       </div>
     </section>
 
+    <section class="content-section activity-card" id="quick-check">
+      <h2>Quick Check: Vision to Vibration</h2>
+      <p>
+        Answer the questions below to review how visual information is
+        transformed into haptic feedback. Select one answer for each question,
+        then choose <strong>Check quiz</strong> to see your score.
+      </p>
+
+      <div class="quiz-question">
+        <h3>1. What does the computer-vision stage provide to the haptic system?</h3>
+        <div class="quiz-options">
+          <button type="button" data-question="q1" data-answer="wrong">
+            A complete image that the user directly experiences
+          </button>
+          <button type="button" data-question="q1" data-answer="correct">
+            Estimates such as object position, distance, motion, and risk
+          </button>
+          <button type="button" data-question="q1" data-answer="wrong">
+            Electrical power for the vibration motors
+          </button>
+        </div>
+        <p class="quiz-feedback" id="q1-feedback" aria-live="polite"></p>
+      </div>
+
+      <div class="quiz-question">
+        <h3>2. Which haptic property is most directly suited to communicating direction?</h3>
+        <div class="quiz-options">
+          <button type="button" data-question="q2" data-answer="correct">
+            The location of the active motor
+          </button>
+          <button type="button" data-question="q2" data-answer="wrong">
+            The battery capacity
+          </button>
+          <button type="button" data-question="q2" data-answer="wrong">
+            The camera's image resolution alone
+          </button>
+        </div>
+        <p class="quiz-feedback" id="q2-feedback" aria-live="polite"></p>
+      </div>
+
+      <div class="quiz-question">
+        <h3>3. Why might a system combine a camera with ultrasonic sensing?</h3>
+        <div class="quiz-options">
+          <button type="button" data-question="q3" data-answer="wrong">
+            To eliminate the need for an embedded processor
+          </button>
+          <button type="button" data-question="q3" data-answer="wrong">
+            To make every detected object vibrate simultaneously
+          </button>
+          <button type="button" data-question="q3" data-answer="correct">
+            To supplement visual estimates, especially for distance
+          </button>
+        </div>
+        <p class="quiz-feedback" id="q3-feedback" aria-live="polite"></p>
+      </div>
+
+      <div class="quiz-question">
+        <h3>4. What is a major limitation of fixed rule-based haptic encoding?</h3>
+        <div class="quiz-options">
+          <button type="button" data-question="q4" data-answer="wrong">
+            It cannot be explained or tested
+          </button>
+          <button type="button" data-question="q4" data-answer="correct">
+            Fixed thresholds may not work equally well in every environment or for every user
+          </button>
+          <button type="button" data-question="q4" data-answer="wrong">
+            It prevents the system from using any sensors
+          </button>
+        </div>
+        <p class="quiz-feedback" id="q4-feedback" aria-live="polite"></p>
+      </div>
+
+      <button class="button primary-button" id="check-quiz" type="button">
+        Check quiz
+      </button>
+      <p class="quiz-feedback" id="quiz-result" aria-live="polite"></p>
+    </section>
+
     <section class="content-section">
       <h2>Example algorithm</h2>
       <p>

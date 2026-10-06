@@ -358,6 +358,11 @@ td {
   border-color: var(--cyan);
 }
 
+.quiz-options button.selected {
+  border-color: var(--cyan);
+  background: rgba(34, 211, 238, 0.15);
+}
+
 .quiz-feedback {
   margin-top: 1rem;
   font-weight: 700;
