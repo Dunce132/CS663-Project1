@@ -87,14 +87,18 @@
 
     <section class="audio-section container">
       <div>
-        <p class="eyebrow">Listen to the introduction</p>
-        <h2>Prefer audio?</h2>
-        <p>Use the narration to follow along with this page.</p>
+        <p class="eyebrow">Accessible narration</p>
+        <h2>Listen to the introduction</h2>
+        <p>Use your browser's built-in voice to read this page aloud.</p>
+        <div class="speech-controls">
+          <button class="button secondary-button" id="read-page" type="button">
+            🔊 Read this page aloud
+          </button>
+          <button class="button secondary-button" id="stop-reading" type="button">
+            Stop
+          </button>
+        </div>
       </div>
-      <audio controls preload="metadata">
-        <source src="audio/introduction.mp3" type="audio/mpeg">
-        Your browser does not support audio playback.
-      </audio>
     </section>
   </main>
 
