@@ -71,4 +71,47 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   updateHapticDemo();
+
+  // Browser-based page narration
+  const readButton = document.querySelector("#read-page");
+  const stopButton = document.querySelector("#stop-reading");
+
+  function getPageText() {
+    const mainContent = document.querySelector("main");
+
+    if (!mainContent) {
+      return "";
+    }
+
+    const contentCopy = mainContent.cloneNode(true);
+
+    contentCopy.querySelectorAll(
+      "button, audio, input, output, .page-navigation"
+    ).forEach((element) => {
+      element.remove();
+    });
+
+    return contentCopy.innerText.replace(/\s+/g, " ").trim();
+  }
+
+  if (readButton && "speechSynthesis" in window) {
+    readButton.addEventListener("click", () => {
+      window.speechSynthesis.cancel();
+
+      const pageText = getPageText();
+      const speech = new SpeechSynthesisUtterance(pageText);
+
+      speech.rate = 0.95;
+      speech.pitch = 1;
+      speech.volume = 1;
+
+      window.speechSynthesis.speak(speech);
+    });
+  }
+
+  if (stopButton && "speechSynthesis" in window) {
+    stopButton.addEventListener("click", () => {
+      window.speechSynthesis.cancel();
+    });
+  }
 });
