@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Future directions for vision-guided haptics</title>
+  <desc id="desc">A progression from current rule-based systems toward adaptive, personalized, multimodal, and human-centered haptic systems.</desc>
+  <style>
+    .title { font: bold 30px Arial, sans-serif; fill: #e5e7eb; }
+    .heading { font: bold 22px Arial, sans-serif; fill: #ffffff; }
+    .text { font: 18px Arial, sans-serif; fill: #cbd5e1; }
+    .arrow { stroke: #22d3ee; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+    .box { stroke: #64748b; stroke-width: 2; rx: 14; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#22d3ee"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="720" rx="24" fill="#0f172a"/>
+  <text x="600" y="55" text-anchor="middle" class="title">Future Directions</text>
+
+  <rect x="55" y="250" width="190" height="180" class="box" fill="#17233b"/>
+  <text x="150" y="305" text-anchor="middle" class="heading">Current</text>
+  <text x="150" y="345" text-anchor="middle" class="text">Fixed rules</text>
+  <text x="150" y="380" text-anchor="middle" class="text">Basic alerts</text>
+
+  <path d="M245 340 H305" class="arrow"/>
+
+  <rect x="310" y="250" width="190" height="180" class="box" fill="#164e63"/>
+  <text x="405" y="305" text-anchor="middle" class="heading">Better sensing</text>
+  <text x="405" y="345" text-anchor="middle" class="text">Depth cameras</text>
+  <text x="405" y="380" text-anchor="middle" class="text">Sensor fusion</text>
+
+  <path d="M500 340 H560" class="arrow"/>
+
+  <rect x="565" y="250" width="190" height="180" class="box" fill="#164e63"/>
+  <text x="660" y="305" text-anchor="middle" class="heading">Adaptive</text>
+  <text x="660" y="345" text-anchor="middle" class="text">Context-aware</text>
+  <text x="660" y="380" text-anchor="middle" class="text">feedback patterns</text>
+
+  <path d="M755 340 H815" class="arrow"/>
+
+  <rect x="820" y="250" width="325" height="180" class="box" fill="#312e81"/>
+  <text x="982" y="305" text-anchor="middle" class="heading">Human-centered future</text>
+  <text x="982" y="345" text-anchor="middle" class="text">Personalized vibration codes</text>
+  <text x="982" y="380" text-anchor="middle" class="text">Multimodal reasoning</text>
+  <text x="982" y="415" text-anchor="middle" class="text">More comfortable wearables</text>
+
+  <text x="600" y="555" text-anchor="middle" class="text">Future systems should improve both technical performance and user understanding.</text>
+</svg>

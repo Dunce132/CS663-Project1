@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Embedded vision-to-haptic architecture</title>
+  <desc id="desc">Camera and sensor data are processed by an embedded computer, converted by a haptic mapping algorithm, and sent through a motor driver to vibration actuators.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17233b"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="source" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#164e63"/>
+      <stop offset="1" stop-color="#0e7490"/>
+    </linearGradient>
+    <linearGradient id="processor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#312e81"/>
+      <stop offset="1" stop-color="#6d28d9"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#22d3ee"/>
+    </marker>
+    <style>
+      .label { font-family: Arial, sans-serif; fill: #e5e7eb; }
+      .body { font-size: 25px; font-weight: 700; }
+      .detail { font-size: 19px; fill: #cbd5e1; }
+      .small { font-size: 17px; fill: #a6b1c5; }
+      .line { stroke: #22d3ee; stroke-width: 5; fill: none; marker-end: url(#arrow); }
+      .box { stroke: rgba(229,231,235,.25); stroke-width: 2; rx: 18; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="700" rx="28" fill="url(#background)"/>
+  <text x="600" y="55" text-anchor="middle" class="label body" font-size="32">Embedded Vision-to-Haptic Feedback Loop</text>
+
+  <rect x="45" y="155" width="205" height="300" class="box" fill="url(#source)"/>
+  <text x="147" y="205" text-anchor="middle" class="label body">Sensing</text>
+  <text x="75" y="275" class="label detail">camera frames</text>
+  <text x="75" y="315" class="label detail">depth / ultrasonic</text>
+  <text x="75" y="355" class="label detail">inertial data</text>
+  <text x="147" y="415" text-anchor="middle" class="label small">environmental input</text>
+
+  <path d="M250 305 H315" class="line"/>
+
+  <rect x="320" y="125" width="250" height="360" class="box" fill="url(#processor)"/>
+  <text x="445" y="180" text-anchor="middle" class="label body">Embedded processor</text>
+  <text x="350" y="255" class="label detail">1. perception model</text>
+  <text x="350" y="300" class="label detail">2. sensor fusion</text>
+  <text x="350" y="345" class="label detail">3. risk priority</text>
+  <text x="350" y="390" class="label detail">4. haptic mapping</text>
+  <text x="445" y="445" text-anchor="middle" class="label small">continuous decision loop</text>
+
+  <path d="M570 305 H635" class="line"/>
+
+  <rect x="640" y="155" width="205" height="300" class="box" fill="#164e63"/>
+  <text x="742" y="205" text-anchor="middle" class="label body">Motor driver</text>
+  <text x="675" y="275" class="label detail">scales current</text>
+  <text x="675" y="315" class="label detail">controls pulse width</text>
+  <text x="675" y="355" class="label detail">schedules motors</text>
+  <text x="742" y="415" text-anchor="middle" class="label small">actuator commands</text>
+
+  <path d="M845 305 H910" class="line"/>
+
+  <rect x="915" y="155" width="240" height="300" class="box" fill="#312e81"/>
+  <text x="1035" y="205" text-anchor="middle" class="label body">Haptic output</text>
+  <text x="950" y="275" class="label detail">left / center / right</text>
+  <text x="950" y="315" class="label detail">intensity</text>
+  <text x="950" y="355" class="label detail">pulse rate</text>
+  <text x="1035" y="415" text-anchor="middle" class="label small">direction + urgency</text>
+
+  <path d="M1035 455 V555 H147 V455" class="line"/>
+  <text x="600" y="585" text-anchor="middle" class="label small">new feedback updates the next sensing and decision cycle</text>
+</svg>

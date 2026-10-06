@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Limitations of vision-guided haptic feedback</title>
+  <desc id="desc">A central vision-guided haptic system is affected by environmental, technical, hardware, and human limitations.</desc>
+  <style>
+    .title { font: bold 30px Arial, sans-serif; fill: #e5e7eb; }
+    .heading { font: bold 22px Arial, sans-serif; fill: #ffffff; }
+    .text { font: 18px Arial, sans-serif; fill: #cbd5e1; }
+    .line { stroke: #22d3ee; stroke-width: 3; }
+    .box { stroke: #64748b; stroke-width: 2; rx: 14; }
+  </style>
+  <rect width="1200" height="720" rx="24" fill="#0f172a"/>
+  <text x="600" y="55" text-anchor="middle" class="title">Limitations and Challenges</text>
+
+  <line x1="600" y1="360" x2="250" y2="190" class="line"/>
+  <line x1="600" y1="360" x2="950" y2="190" class="line"/>
+  <line x1="600" y1="360" x2="250" y2="530" class="line"/>
+  <line x1="600" y1="360" x2="950" y2="530" class="line"/>
+
+  <rect x="420" y="275" width="360" height="170" class="box" fill="#312e81" stroke="#a78bfa"/>
+  <text x="600" y="325" text-anchor="middle" class="heading">Vision-guided</text>
+  <text x="600" y="360" text-anchor="middle" class="heading">haptic system</text>
+  <text x="600" y="405" text-anchor="middle" class="text">must be timely and understandable</text>
+
+  <rect x="55" y="105" width="390" height="170" class="box" fill="#17233b"/>
+  <text x="80" y="150" class="heading">Environment</text>
+  <text x="80" y="190" class="text">Lighting, glare, shadows</text>
+  <text x="80" y="225" class="text">Occlusion and crowded scenes</text>
+  <text x="80" y="260" class="text">Moving camera or obstacles</text>
+
+  <rect x="755" y="105" width="390" height="170" class="box" fill="#17233b"/>
+  <text x="780" y="150" class="heading">Technical performance</text>
+  <text x="780" y="190" class="text">False or missed detections</text>
+  <text x="780" y="225" class="text">Depth-estimation errors</text>
+  <text x="780" y="260" class="text">Processing latency</text>
+
+  <rect x="55" y="445" width="390" height="170" class="box" fill="#17233b"/>
+  <text x="80" y="490" class="heading">Hardware</text>
+  <text x="80" y="530" class="text">Battery and power consumption</text>
+  <text x="80" y="565" class="text">Device size and weight</text>
+  <text x="80" y="600" class="text">Actuator placement</text>
+
+  <rect x="755" y="445" width="390" height="170" class="box" fill="#17233b"/>
+  <text x="780" y="490" class="heading">Human factors</text>
+  <text x="780" y="530" class="text">Training and interpretation</text>
+  <text x="780" y="565" class="text">Cognitive overload</text>
+  <text x="780" y="600" class="text">Safety and user trust</text>
+</svg>
