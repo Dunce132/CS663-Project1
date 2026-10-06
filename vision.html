@@ -28,25 +28,60 @@
     <section class="page-intro">
       <p class="eyebrow">Computer vision</p>
       <h1>Understanding Visual Information</h1>
-      <p>Computer vision is the first step in a vision-to-haptic assistive system. A camera captures sequential images of the surrounding environment but, these images are not
-      useful to the wearer until they are converted into spatial descriptions. The system makes estimates where objects are located relative to the user, whether they
-      are moving, and if they are a potential risk to the wearer. These estimates become the inputs of the haptic system.</p>
-      <audio controls preload="metadata"><source src="audio/vision.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio>
+      <p>
+        Computer vision is the first step in a vision-to-haptic assistive
+        system. A camera captures sequential images of the surrounding
+        environment, but these images are not useful to the wearer until they
+        are converted into spatial descriptions. The system estimates where
+        objects are located relative to the wearer, whether they are moving,
+        and whether they present a potential risk. These estimates become
+        inputs for the haptic system.
+      </p>
+      <div class="speech-controls">
+        <button class="button secondary-button" id="read-page" type="button">
+          🔊 Read this page aloud
+        </button>
+        <button class="button secondary-button" id="stop-reading" type="button">
+          Stop
+        </button>
+      </div>
     </section>
 
     <section class="content-section">
       <h2>What information does the camera provide?</h2>
-      <p>As previously mentioned, the camera captures sequential two-dimensional image frames. Through these frames, a computer vision system can estimate properties relevant
-      to keeping its wearer safe. For an instance, an object-detection model can identify people, vehicles, furniture, walls, and other potential obstacles. The position and 
-      relative height of the object in the image can help estimate the horizontal direction and distance, respectively.</p>
+      <p>
+        As previously mentioned, the camera captures sequential two-dimensional
+        image frames. From these frames, a computer-vision system can estimate
+        properties relevant to the wearer’s safety. For instance, an
+        object-detection model can identify people, vehicles, furniture, walls,
+        and other potential obstacles. The horizontal position of an object in
+        the image can provide a directional estimate, while apparent size or a
+        separate depth sensor can help estimate distance.
+      </p>
 
-      <p>By using sequential frames, direction of motion can also be estimated. As an example as an object becomes larger and more centered, that can indicate an object is
-      approaching the wearer's path. Thus, the system combines object position, depth, estimated direction of motion, and the model's confidence value to estimate the risk of 
-      collision. Differing levels of risk will help the haptic feedback device give more precise feedback beyond indicating an object exists in which direction.</p>
+      <p>
+        Sequential frames can also be used to estimate motion. For example, an
+        object that becomes larger and shifts toward the center of the image
+        may be approaching the wearer’s path. The system can combine object
+        position, depth, estimated motion, and model confidence to estimate
+        collision risk. Different risk levels allow the haptic device to
+        communicate more than the existence and direction of an object; they
+        can also influence the strength and urgency of the feedback.
+      </p>
 
       <p>The visual output can be represented as structured data rather than as a complete image. For example, one detected object might be represented as
       <code>{label: "person", x: 0.25, depth: 1.8, velocity: 0.4, confidence: 0.91}</code>. This example is an abstraction created for this tutorial. The 
-      embedded system can then prioritize the information and determine what should be communicated through vibration </p>
+      embedded system can then prioritize the information and determine what
+      should be communicated through vibration.
+      </p>
+
+      <p>
+        Vision-to-haptic systems can also use visual information to estimate
+        physical properties rather than only object categories. Vis2Hap uses
+        visual input to generate haptic representations of surface
+        characteristics such as roughness and slipperiness
+        <a class="citation" href="bibliography.html#reference-3">[3]</a>.
+      </p>
 
       <p>
       A related architecture is described by Kleinberg et al., who combine camera-based vision with ultrasonic sensing and machine-learning methods to
