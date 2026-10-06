@@ -440,6 +440,19 @@ td {
   margin-bottom: 0;
 }
 
+.speech-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.speech-controls .button {
+  cursor: pointer;
+  border: none;
+  font: inherit;
+}
+
 audio {
   width: min(100%, 22rem);
 }
