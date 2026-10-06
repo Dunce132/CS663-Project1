@@ -72,6 +72,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateHapticDemo();
 
+  // Quiz activity
+  const quizButtons = document.querySelectorAll(".quiz-options button");
+  const checkQuizButton = document.querySelector("#check-quiz");
+  const quizResult = document.querySelector("#quiz-result");
+
+  quizButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const question = button.dataset.question;
+      const feedback = document.querySelector(`#${question}-feedback`);
+
+      document
+        .querySelectorAll(`button[data-question="${question}"]`)
+        .forEach((option) => {
+          option.classList.remove("selected");
+        });
+
+      button.classList.add("selected");
+
+      if (feedback) {
+        feedback.textContent = "Answer selected.";
+        feedback.classList.remove("correct", "wrong");
+      }
+    });
+  });
+
+  if (checkQuizButton) {
+    checkQuizButton.addEventListener("click", () => {
+      const questions = ["q1", "q2", "q3", "q4"];
+      let score = 0;
+
+      questions.forEach((question) => {
+        const selected = document.querySelector(
+          `button[data-question="${question}"].selected`
+        );
+
+        const feedback = document.querySelector(`#${question}-feedback`);
+
+        if (!selected) {
+          if (feedback) {
+            feedback.textContent = "Choose an answer for this question.";
+            feedback.className = "quiz-feedback wrong";
+          }
+        } else if (selected.dataset.answer === "correct") {
+          score += 1;
+
+          if (feedback) {
+            feedback.textContent = "Correct.";
+            feedback.className = "quiz-feedback correct";
+          }
+        } else if (feedback) {
+          feedback.textContent =
+            "Not quite. Review the explanation above.";
+          feedback.className = "quiz-feedback wrong";
+        }
+      });
+
+      if (quizResult) {
+        quizResult.textContent = `Your score: ${score}/4.`;
+
+        quizResult.className =
+          score === 4
+            ? "quiz-feedback correct"
+            : "quiz-feedback";
+      }
+    });
+  }
+
   // Browser-based page narration
   const readButton = document.querySelector("#read-page");
   const stopButton = document.querySelector("#stop-reading");
@@ -85,11 +152,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const contentCopy = mainContent.cloneNode(true);
 
-    contentCopy.querySelectorAll(
-      "button, audio, input, output, .page-navigation"
-    ).forEach((element) => {
-      element.remove();
-    });
+    contentCopy
+      .querySelectorAll(
+        "button, audio, input, output, .page-navigation"
+      )
+      .forEach((element) => {
+        element.remove();
+      });
 
     return contentCopy.innerText.replace(/\s+/g, " ").trim();
   }
